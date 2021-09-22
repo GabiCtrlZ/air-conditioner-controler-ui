@@ -1,6 +1,10 @@
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
 
+// cloud stuff
+const cloudPrefix = 'https://raw.githubusercontent.com/GabiCtrlZ/air-conditioner-controler-ui/main/images/'
+const localPrefix = 'images/'
+
 // images names
 const blink2 = 'blink2'
 const blowing1 = 'blowing1'
@@ -77,7 +81,7 @@ const images = {}
 imagesNames.forEach((name) => {
   const image = new Image(IMAGE_WIDTH, IMAGE_HEIGHT)
   image.onload = () => { imageLoadedCounter += 1 }
-  image.src = `images/${name}.png`
+  image.src = `${cloudPrefix}${name}.png`
   images[name] = image
 })
 
