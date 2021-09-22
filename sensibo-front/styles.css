@@ -1,0 +1,28 @@
+html {
+  overflow: hidden;
+}
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(90deg, #addfff, #fff9e8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  font-family: 'Share Tech Mono';
+}
+canvas {
+  position: absolute;
+  z-index: 9;
+}
+#button {
+  border: 2px solid #151515;
+  color: #151515;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+  cursor: pointer;
+}
