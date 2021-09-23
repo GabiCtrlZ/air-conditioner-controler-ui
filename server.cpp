@@ -3,28 +3,9 @@
 #include <ESP8266WebServer.h>
 
 const char* ssid = "SSID"; // should be changed
-const char* pass = "PASSWORD"; // should be changed
+const char* pass = "PASS"; // should be changed
 bool state = false;
-String htmlTemplate = "<!DOCTYPE html>
-<html lang=\"en\">
-
-<head>
-  <title>Gabibo</title>
-  <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Share+Tech+Mono\">
-  <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/GabiCtrlZ/air-conditioner-controler-ui/sensibo-front/styles.css\">
-</head>
-<script>
-  const SERVER_URI = 'http://' + $1
-  const INITIAL_STATE = $2
-</script>
-
-<body>
-  <canvas id=\"canvas\"></canvas>
-  <div id=\"button\">TURN ON</div>
-</body>
-<script src=\"https://cdn.jsdelivr.net/gh/GabiCtrlZ/air-conditioner-controler-ui/sensibo-front/main.js\"></script>
-
-</html>";
+String htmlTemplate = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <title>Gabibo</title>\n  <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Share+Tech+Mono\">\n  <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/GabiCtrlZ/air-conditioner-controler-ui/sensibo-front/styles.css\">\n</head>\n<script>\n  const SERVER_URI = 'http://' + $1\n  const INITIAL_STATE = $2\n</script>\n<body>\n  <canvas id=\"canvas\"></canvas>\n  <div id=\"button\">TURN ON</div>\n</body>\n<script src=\"https://cdn.jsdelivr.net/gh/GabiCtrlZ/air-conditioner-controler-ui/sensibo-front/main.js\"></script>\n</html>";
 
 ESP8266WebServer server(80);
 Servo myservo;
@@ -46,7 +27,7 @@ void setup(void){
   Serial.println(WiFi.localIP());
   
   server.on("/", [](){
-    String toChange[] = { WiFi.localIP(), String(state) };
+    String toChange[] = { WiFi.localIP().toString(), String(state) };
     server.send(200, "text/html", formater(htmlTemplate, toChange));
   });
 
