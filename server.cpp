@@ -5,7 +5,26 @@
 const char* ssid = "SSID"; // should be changed
 const char* pass = "PASSWORD"; // should be changed
 bool state = false;
-String htmlTemplate = "<h1>$1 or $2 : <a href=\"/on\">ON</a> &nbsp;&nbsp;or <a href=\"/on\">OFF</a> or URL : /s?degree=90</h1>";
+String htmlTemplate = "<!DOCTYPE html>
+<html lang=\"en\">
+
+<head>
+  <title>Gabibo</title>
+  <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Share+Tech+Mono\">
+  <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/GabiCtrlZ/air-conditioner-controler-ui/sensibo-front/styles.css\">
+</head>
+<script>
+  const SERVER_URI = 'http://' + $1
+  const INITIAL_STATE = $2
+</script>
+
+<body>
+  <canvas id=\"canvas\"></canvas>
+  <div id=\"button\">TURN ON</div>
+</body>
+<script src=\"https://cdn.jsdelivr.net/gh/GabiCtrlZ/air-conditioner-controler-ui/sensibo-front/main.js\"></script>
+
+</html>";
 
 ESP8266WebServer server(80);
 Servo myservo;
@@ -27,7 +46,7 @@ void setup(void){
   Serial.println(WiFi.localIP());
   
   server.on("/", [](){
-    String toChange[] = { "gabi", "balko" };
+    String toChange[] = { WiFi.localIP(), String(state) };
     server.send(200, "text/html", formater(htmlTemplate, toChange));
   });
 

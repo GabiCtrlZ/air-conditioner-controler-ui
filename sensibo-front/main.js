@@ -114,6 +114,8 @@ animate()
 
 const button = document.querySelector('#button')
 
+if (state) button.innerHTML = 'TURN OFF'
+
 button.addEventListener('click', () => {
   if (!state) {
     queue.push(wakingUp, startBlowing, blowing)
