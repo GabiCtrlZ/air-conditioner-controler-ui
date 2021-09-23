@@ -5,7 +5,7 @@
 const char* ssid = "SSID"; // should be changed
 const char* pass = "PASS"; // should be changed
 bool state = false;
-String htmlTemplate = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <title>Gabibo</title>\n  <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Share+Tech+Mono\">\n  <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/GabiCtrlZ/air-conditioner-controler-ui/sensibo-front/styles.css\">\n</head>\n<script>\n  const SERVER_URI = 'http://' + $1\n  const INITIAL_STATE = $2\n</script>\n<body>\n  <canvas id=\"canvas\"></canvas>\n  <div id=\"button\">TURN ON</div>\n</body>\n<script src=\"https://cdn.jsdelivr.net/gh/GabiCtrlZ/air-conditioner-controler-ui/sensibo-front/main.js\"></script>\n</html>";
+String htmlTemplate = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <title>Gabibo</title>\n  <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Share+Tech+Mono\">\n  <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/GabiCtrlZ/air-conditioner-controler-ui/sensibo-front/styles.css\">\n</head>\n<script>\n  const SERVER_URI = 'http://' + '$1'\n  const INITIAL_STATE = $2\n</script>\n<body>\n  <canvas id=\"canvas\"></canvas>\n  <div id=\"button\">TURN ON</div>\n</body>\n<script src=\"https://cdn.jsdelivr.net/gh/GabiCtrlZ/air-conditioner-controler-ui/sensibo-front/main.js\"></script>\n</html>";
 
 ESP8266WebServer server(80);
 Servo myservo;

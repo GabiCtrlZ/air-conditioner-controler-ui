@@ -19,10 +19,10 @@ canvas {
   z-index: 9;
 }
 #button {
-  border: 2px solid #151515;
+  border: 5px solid #151515;
   color: #151515;
-  font-size: 1.5rem;
-  padding: 0.5rem 1rem;
+  font-size: 4.5rem;
+  padding: 1.5rem 3rem;
   z-index: 10;
   cursor: pointer;
 }

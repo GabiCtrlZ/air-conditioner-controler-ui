@@ -57,8 +57,8 @@ const cy = ch / 2
 
 // consts
 const IMAGES_TO_LOAD = imagesNames.length
-const IMAGE_WIDTH = Math.floor(63 * Math.min(cw / 100, 4))
-const IMAGE_HEIGHT = Math.floor(35 * Math.min(cw / 100, 4))
+const IMAGE_WIDTH = Math.floor(2 * 63 * Math.min(cw / 100, 4))
+const IMAGE_HEIGHT = Math.floor(2 * 35 * Math.min(cw / 100, 4))
 
 // counters
 let imageLoadedCounter = 0
